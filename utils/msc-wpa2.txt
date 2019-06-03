@@ -1,0 +1,14 @@
+https://mermaidjs.github.io/mermaid-live-editor/
+
+sequenceDiagram
+    participant Supplicant
+    participant Authenticator
+    participant Authentication Server
+    Supplicant -->> Authenticator: Authentication
+    Authenticator -->> Supplicant: Authentication
+    Supplicant -->> Authenticator: Association Request
+    Authenticator -->> Supplicant: Association Response
+    Supplicant ->> Authenticator: Key (Message 1 of 4)
+    Authenticator ->> Supplicant: Key (Message 2 of 4)
+    Supplicant ->> Authenticator: Key (Message 3 of 4)
+    Authenticator ->> Supplicant: Key (Message 4 of 4)

@@ -1,0 +1,15 @@
+https://mermaidjs.github.io/mermaid-live-editor/
+
+sequenceDiagram
+    participant Supplicant
+    participant Authenticator
+    participant Authentication Server
+    Supplicant ->> Authenticator: EAPOL Start
+    Authenticator ->> Supplicant: EAP Request, Identity
+    Supplicant ->> Authenticator: EAP Response, Identity
+    Authenticator ->> Authentication Server: RADIUS Access Request
+    Authentication Server ->> Authenticator: RADIUS Access Challenge
+    Authenticator ->> Supplicant: EAP Request, Protected EAP (EAP-PEAP)
+    Note over Supplicant,Authentication Server: PEAP
+    Authentication Server->>Authenticator: RADIUS Access Success
+    Authenticator->>Supplicant:EAP Success 
